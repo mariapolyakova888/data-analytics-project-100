@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "hexlet-code"
+name = "charts_project"
 version = "0.1.0"
 description = ""
 authors = ["mariapolyakova888 <guard_dafna@mail.ru>"]
