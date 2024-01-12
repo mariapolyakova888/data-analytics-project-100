@@ -18,7 +18,7 @@ numpy = "^1.26.2"
 
 
 [tool.poetry.scripts]
-main = "main:run_all"
+main = "charts_project.main:run_all"
 
 
 [build-system]

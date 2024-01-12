@@ -91,7 +91,7 @@ def get_save_conversion_ads(visits, registrations):
     visits = get_visits(API_URL, DATE_BEGIN, DATE_END)
     registrations = get_registrations(API_URL, DATE_BEGIN, DATE_END)
     df_conversion = calc_and_save_conversion(visits, registrations)
-    ads = get_ads('./ads.csv')
+    ads = get_ads('./charts_project/data/ads.csv')
     # объединение датафреймов по рекламе и конверсии
     df_conversion_ads = pd.merge(
         df_conversion, ads,
@@ -398,7 +398,7 @@ def charts(cnv_ads, df_conversion, registrations, ads, DATE_BEGIN, DATE_END):
     axes[0].set_ylabel('Unique Visits', fontsize=20)
     axes[0].set_xticks(visits_campaign['date_group'])
     axes[0].set_xticklabels(visits_campaign['date_group'], fontsize=14, rotation=45)
-    axes[0].legend(fontsize=14, loc='upper right')
+    axes[0].legend(fontsize=14)
     axes[0].grid(axis='y')
     registr_campaign = cnv_ads.groupby(['date_group'])['registrations'].sum().reset_index()
     x3 = registr_campaign['date_group']
@@ -417,7 +417,7 @@ def charts(cnv_ads, df_conversion, registrations, ads, DATE_BEGIN, DATE_END):
     axes[1].set_ylabel('Unique Users', fontsize=20)
     axes[1].set_xticks(registr_campaign['date_group'])
     axes[1].set_xticklabels(registr_campaign['date_group'], fontsize=14, rotation=45)
-    axes[1].legend(fontsize=14, loc='upper right')
+    axes[1].legend(fontsize=14)
     axes[1].grid(axis='y')
     plt.savefig('./charts/Visits_and_registrations_chart.png')
     plt.close(fig)
@@ -430,7 +430,7 @@ def run_all():
     visits = get_visits(API_URL, DATE_BEGIN, DATE_END)
     registrations = get_registrations(API_URL, DATE_BEGIN, DATE_END)
     df_conversion = calc_and_save_conversion(visits, registrations)
-    ads = get_ads('./ads.csv')
+    ads = get_ads('./charts_project/data/ads.csv')
     cnv_ads = get_save_conversion_ads(visits, registrations)
     charts(cnv_ads, df_conversion, registrations, ads, DATE_BEGIN, DATE_END)
 
