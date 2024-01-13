@@ -4,7 +4,7 @@ version = "0.1.0"
 description = ""
 authors = ["mariapolyakova888 <guard_dafna@mail.ru>"]
 readme = "README.md"
-packages = [{include = "hexlet-code"}]
+
 
 [tool.poetry.dependencies]
 python = "^3.10"
