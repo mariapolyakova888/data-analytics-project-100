@@ -91,7 +91,7 @@ def get_save_conversion_ads(visits, registrations):
     visits = get_visits(API_URL, DATE_BEGIN, DATE_END)
     registrations = get_registrations(API_URL, DATE_BEGIN, DATE_END)
     df_conversion = calc_and_save_conversion(visits, registrations)
-    ads = get_ads('./charts_project/hexlet-code/data/ads.csv')
+    ads = get_ads('./hexlet-code/data/ads.csv')
     # объединение датафреймов по рекламе и конверсии
     df_conversion_ads = pd.merge(
         df_conversion, ads,
@@ -430,7 +430,7 @@ def run_all():
     visits = get_visits(API_URL, DATE_BEGIN, DATE_END)
     registrations = get_registrations(API_URL, DATE_BEGIN, DATE_END)
     df_conversion = calc_and_save_conversion(visits, registrations)
-    ads = get_ads('./charts_project/hexlet-code/data/ads.csv')
+    ads = get_ads('./hexlet-code/data/ads.csv')
     cnv_ads = get_save_conversion_ads(visits, registrations)
     charts(cnv_ads, df_conversion, registrations, ads, DATE_BEGIN, DATE_END)
 

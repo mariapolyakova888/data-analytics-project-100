@@ -4,7 +4,7 @@ version = "0.1.0"
 description = ""
 authors = ["mariapolyakova888 <guard_dafna@mail.ru>"]
 readme = "README.md"
-packages = [{include = "charts_project"}]
+packages = [{include = "hexlet-code"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
@@ -16,7 +16,7 @@ numpy = "^1.26.2"
 
 
 [tool.poetry.scripts]
-main = "charts_project.hexlet-code.main:run_all"
+main = "hexlet-code.main:run_all"
 
 
 [build-system]
